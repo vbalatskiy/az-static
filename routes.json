@@ -9,19 +9,19 @@
     "platformErrorOverrides": [
       {
         "errorType": "Unauthorized_Unknown",
-        "serve": "/.auth/login/aad"
+        "serve": "/index.html"
       },
               {
         "errorType": "Unauthenticated",
-        "serve": "/.auth/login/aad"
+        "serve": "/index.html"
       },
               {
         "errorType": "Unauthorized_InsufficientUserInformation",
-        "serve": "/.auth/login/aad"
+        "serve": "/index.html"
       },
               {
         "errorType": "Unauthorized_MissingRoles",
-        "serve": "/.auth/login/aad"
+        "serve": "/index.html"
       },
         {
         "errorType": "NotFound",
