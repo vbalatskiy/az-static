@@ -15,102 +15,19 @@
             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <a class="navbar-brand">{{ title }}</a>
+                            <a class="navbar-brand">Heat map</a>
                         </div>
                         
                         <ul class="nav">
                                 <a style="margin-right: 10px;" class="btn btn-primary btn-sm" href="/.auth/login/aad" v-if="!user.userDetails">Login</a> 
-                                
-                                <a style="margin-right: 10px;" class="btn btn-primary btn-sm" href="/.auth/logout" v-if="user.userDetails">Log out</a>
                         </ul>
                         
                     </div>
             </nav>
-            <div class="container" style="margin-top: 10px;" v-if="user.userDetails">
-                <p>User: {{ user.userDetails }}</p>
-              </div>
-            <div class="container" style="margin-top: 10px;">
-              <label for="devices" >Choose device:</label>
-              <select name="devices" id="devices" v-model="device" v-on:change="selectDevice()">
-                <option v-for="device in devices" v-bind:value="device.id">
-                    {{ device.id }}
-                </option>
-              </select>
-            </div>
-            
-            <div class="container" style="margin-top: 10px;">
-                <div class="card" >
-                    <div class="card-header">
-                        Messages from {{ device }} will appear below
-                    </div>
-
-                    <div class="card-body">       
-                        <div class="card-text" v-if="messages.length==0">
-                                Waiting...
-                        </div>         
-                        <ul id="messages" class="list-group">
-                            <li v-for="message in messages" class="list-group-item list-group-item-success">
-                                    {{ message }}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
         </div>
         
         
-        <script>
-            var socket = io("http://realtime-go-app-geba.westeurope.azurecontainer.io:8080", {
-                autoConnect: false,
-                secure: false
-
-            });
-           
-
-            socket.on('message', function(msg){
-                app.messages.push(msg)
-                
-            })
-
-            var app = new Vue({
-                el: '#app',
-                data : {
-                    title: "Heat map",
-                    messages: [],
-                    device: "your device",
-                    devices: "",
-                    user: ""
-                },
-                beforeMount: function() {
-                    this.getDevices();
-                    this.getUser();
-                },
-                methods: {
-                    clearMessages: function() {
-                        this.messages = []
-                    },
-                    selectDevice: function() {
-                      console.log("Selected device " + this.device);
-                      socket.close(); // even if not connected
-                      this.messages = [];
-                      socket.open();
-                      socket.emit('channel',this.device);
-                    },
-                    async getDevices() {
-                        let  devices  = await(await fetch('/api/device')).json();
-                        this.devices = devices
-                    },
-                    async  getUser() {
-                        const response = await fetch("/.auth/me");
-                        const payload = await response.json();
-                        const { clientPrincipal } = payload;
-                        this.user = clientPrincipal;
-                    }
-
-                }
-})
-        </script>
     </body>
         
 </html>
