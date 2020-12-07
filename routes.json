@@ -17,11 +17,11 @@
       },
               {
         "errorType": "Unauthorized_InsufficientUserInformation",
-        "serve": "/custom-404.html"
+        "serve": "/.auth/login/aad"
       },
               {
         "errorType": "Unauthorized_MissingRoles",
-        "serve": "/custom-404.html"
+        "serve": "/.auth/login/aad"
       }
     ]
   }
