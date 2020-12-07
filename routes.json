@@ -1,8 +1,7 @@
 {
     "routes": [
       {
-        "route": "/*",
-        "serve": "/index_map.html",
+        "route": "/.auth/login/aad",
         "allowedRoles": ["reader"]
       }
 
