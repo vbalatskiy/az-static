@@ -5,10 +5,10 @@
         "serve": "/index_map.html",
         "allowedRoles": ["reader"]
       },
-        {
-  "route": "/.auth/login/aad",
-  "statusCode": "401"
-}
+      {
+        "route": "/login",
+        "serve": "/.auth/login/aad"
+      }
     ],
     "platformErrorOverrides": [
       {
