@@ -1,7 +1,8 @@
 {
     "routes": [
       {
-        "route": "/index_map.html",
+        "route": "/*",
+        "serve": "/index_map.html",
         "allowedRoles": ["reader"]
       }
 
