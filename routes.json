@@ -1,11 +1,10 @@
 {
     "routes": [
       {
-        "route": "/.auth/login/aad",
+        "route": "/*",
+        "serve": "/index_map.html",
         "allowedRoles": ["reader"]
       }
-
-      
     ],
     "platformErrorOverrides": [
       {
