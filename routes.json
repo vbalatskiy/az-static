@@ -10,6 +10,18 @@
       {
         "errorType": "Unauthorized_Unknown",
         "serve": "/.auth/login/aad"
+      },
+              {
+        "errorType": "Unauthenticated",
+        "serve": "/.auth/login/aad"
+      },
+              {
+        "errorType": "Unauthorized_InsufficientUserInformation",
+        "serve": "/custom-404.html"
+      },
+              {
+        "errorType": "Unauthorized_MissingRoles",
+        "serve": "/custom-404.html"
       }
     ]
   }
