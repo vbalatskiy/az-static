@@ -8,8 +8,8 @@
     ],
     "platformErrorOverrides": [
       {
-        "errorType": "NotFound",
-        "serve": "/custom-404.html"
+        "errorType": "Unauthorized_Unknown",
+        "serve": "/.auth/login/aad"
       }
     ]
   }
