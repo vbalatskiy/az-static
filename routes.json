@@ -22,6 +22,10 @@
               {
         "errorType": "Unauthorized_MissingRoles",
         "serve": "/.auth/login/aad"
-      }
+      },
+        {
+        "errorType": "NotFound",
+        "serve": "/index.html"
+      }   
     ]
   }
