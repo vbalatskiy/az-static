@@ -1,3 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.7/socket.io.min.js"></script>
+        <script src="https://unpkg.com/vue"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    </head>
+
+    <body>
+       
+        <div  id="app">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand">Heat map</a>
+                        </div>
+                        
+                        <ul class="nav">
+                                <a style="margin-right: 10px;" class="btn btn-primary btn-sm" href="/.auth/logout" v-if="user.userDetails">Log out</a>
+                        </ul>
+                        
+                    </div>
+            </nav>
+
 <div class="block1"><a href="https://adlks.blob.core.windows.net/share/heatmap_2020_05_28_cherkasy_edited.html"><h3 class="LC20lb DKV0Md"><span>map Cherkasy</span></h3></a></div>
 <div class="block2"><a href="https://adlks.blob.core.windows.net/share/heatmap_2020_06_11_Vinnytsia.html"><h3 class="LC20lb DKV0Md"><span>map Vinnytsia</span></h3></a></div>
 <div class="block3"><a href="https://adlks.blob.core.windows.net/share/map_Khmelnitsky.html"><h3 class="LC20lb DKV0Md"><span>map Khmelnitsky</span></h3></a></div>
@@ -7,3 +34,7 @@
 <div class="block7"><a href="https://adlks.blob.core.windows.net/share/map_Ternopil.html"><h3 class="green"><span>map Ternopil</span></h3></a></div>
 <div class="block8"><a href="https://adlks.blob.core.windows.net/share/map_Zhytomyr.html"><h3 class="LC20lb"><span>map Zhytomyr</span></h3></a></div>
 <div class="block8"><a href="https://adlks.blob.core.windows.net/share/map_Kamenskoe.html"><h3 class="LC20lb"><span>map Kamenskoe</span></h3></a></div>
+
+    </body>
+        
+</html>
