@@ -4,11 +4,7 @@
         "route": "/*",
         "serve": "/index_map.html",
         "allowedRoles": ["reader"]
-      },
-      {
-        "route": "/login",
-        "serve": "/.auth/login/aad"
-      }
+      } 
     ],
     "platformErrorOverrides": [
       {
